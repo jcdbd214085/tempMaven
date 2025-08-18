@@ -1,0 +1,6 @@
+{
+  "mobile.resourceTypes": [
+    "esi-practice/components/page"
+  ],
+  "README": "Indicate which page resource types should display the mobile emulators."
+}

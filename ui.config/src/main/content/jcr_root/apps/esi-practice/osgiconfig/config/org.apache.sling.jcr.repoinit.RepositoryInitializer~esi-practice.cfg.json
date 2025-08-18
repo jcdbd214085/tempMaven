@@ -1,0 +1,7 @@
+{
+    "scripts": [
+        "create path (sling:OrderedFolder) /content/dam/esi-practice",
+        "create path (nt:unstructured) /content/dam/esi-practice/jcr:content",
+        "set properties on /content/dam/esi-practice/jcr:content\n  set cq:conf{String} to /conf/esi-practice\n  set jcr:title{String} to \"ESi Practice\"\nend"
+    ]
+}
