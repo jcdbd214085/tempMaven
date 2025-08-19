@@ -1,2 +1,18 @@
-<p>${properties.productTitle}</p>
-<p>${properties.productInfo}</p>
+<div data-sly-use.product="com.adobe.aem.guides.esi.core.models.ProductModel">
+    <div data-sly-test="${product.fileReference}">
+        <img src="${product.fileReference}.img.png" alt="${product.productTitle}" />
+    </div>
+
+    <div data-sly-test="${product.productTitle}">
+        <h1>${product.productTitle}</h1>
+    </div>
+
+    <div data-sly-test="${product.productInfo}">
+        <p>${product.productInfo}</p>
+    </div>
+
+
+    <div data-sly-test="${product.formattedProductDate}">
+        <p>產品上架日期：${product.formattedProductDate}</p>
+    </div>
+</div>
