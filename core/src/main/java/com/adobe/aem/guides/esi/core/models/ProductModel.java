@@ -23,6 +23,14 @@ public class ProductModel {
     private Date productDate;
 
 
+    @ValueMapValue(name = "./buttonText")
+    private String buttonText;
+
+
+    public String getButtonText() {
+        return buttonText;
+    }
+
     public String getProductTitle() {
         return productTitle;
     }

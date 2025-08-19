@@ -23,4 +23,11 @@
         <p>${product.productInfo}</p>
     </div>
 
+    <div data-sly-test="${product.buttonText}">
+        <button>${product.buttonText}</button>
+    </div>
+
+    <div data-sly-test="${!product.buttonText}">
+        <button>詳細資訊</button>
+    </div>
 </div>

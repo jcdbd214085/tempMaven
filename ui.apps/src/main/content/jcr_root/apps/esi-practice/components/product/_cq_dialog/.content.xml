@@ -71,6 +71,13 @@
                                                             fieldDescription="Leave empty to use the page title."
                                                             fieldLabel="產品資訊"
                                                             name="./productInfo"/>
+
+                                                    <buttonText
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                            fieldLabel="按鈕名稱"
+                                                            name="./buttonText"
+                                                            maxLength="{Long}4"/>
                                                 </items>
                                             </column>
                                         </items>
@@ -119,9 +126,7 @@
                                                                     text="Blue"
                                                                     value="Color_Blue"/>
                                                         </items>
-                                                        <listeners
-                                                                jcr:primaryType="nt:unstructured"
-                                                                change="function(event) {             var selectedValue = event.target.value;             var color;             if (selectedValue === 'Color_Red') {                 color = 'red';             } else if (selectedValue === 'Color_Green') {                 color = 'green';             } else {                 color = 'blue';             }             $(this).closest('coral-dialog').find('coral-panel-content .coral-Form-fieldlabel:first').css('color', color);         }"/>
+
                                                     </type>
                                                 </items>
                                             </column>
