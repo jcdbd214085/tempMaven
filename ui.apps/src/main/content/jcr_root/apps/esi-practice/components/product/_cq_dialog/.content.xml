@@ -101,12 +101,30 @@
                                                     jcr:primaryType="nt:unstructured"
                                                     sling:resourceType="granite/ui/components/coral/foundation/container">
                                                 <items jcr:primaryType="nt:unstructured">
-                                                    <styleName
+
+                                                    <type
                                                             jcr:primaryType="nt:unstructured"
-                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                                            fieldDescription="Enter a style name for the product."
-                                                            fieldLabel="StyleName"
-                                                            name="./tab2_styleTitle"/>
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                            fieldLabel="Type"
+                                                            name="./type">
+                                                        <items jcr:primaryType="nt:unstructured">
+                                                            <fullWindow
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    text="Red"
+                                                                    value="Color_Red"/>
+                                                            <sizedContainer
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    text="Green"
+                                                                    value="Color_Green"/>
+                                                            <inline
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    text="Blue"
+                                                                    value="Color_Blue"/>
+                                                        </items>
+                                                    </type>
+
+
+
                                                 </items>
                                             </column>
                                         </items>
