@@ -26,6 +26,9 @@ public class ProductModel {
 
 
     public String getButtonText() {
+        if (buttonText == null) {
+            return "基礎資訊";
+        }
         return buttonText;
     }
 
