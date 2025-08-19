@@ -45,6 +45,7 @@
                                                             name="./fileReference"
                                                             title="Upload Image Asset"
                                                             useHTML5="{Boolean}true"/>
+<!--                                                    name必須是fileReference，被選的資源路徑才能被保存-->
 
 
                                                     <productName
