@@ -42,9 +42,9 @@
                                                             fieldLabel="產品圖片"
                                                             fileNameParameter="./fileName"
                                                             fileReferenceParameter="./fileReference"
-                                                            mimeTypes="[image/jpg,image/png]"
+                                                            mimeTypes="[image/jpg,image/png,image/jpeg]"
                                                             multiple="{Boolean}false"
-                                                            name="./productImage"
+                                                            name="./fileReference"
                                                             title="Upload Image Asset"
                                                             useHTML5="{Boolean}true"/>
 
