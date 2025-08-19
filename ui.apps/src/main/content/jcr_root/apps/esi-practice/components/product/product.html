@@ -1,7 +1,10 @@
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+     data-sly-call="${clientlib.js @ categories='demo-library'}"></sly>
+
+
 <div data-sly-use.product="com.adobe.aem.guides.esi.core.models.ProductModel">
 
     <div data-sly-test="${product.fileReference}">
-<!--/*        <p>圖片路徑: ${product.fileReference}</p>*/-->
         <img src="${product.fileReference}"
              alt="${product.productTitle || '產品圖片'}"
              style="max-width: 300px; border: 1px solid green;"/>
@@ -28,6 +31,6 @@
     </div>
 
     <div data-sly-test="${!product.buttonText}">
-        <button>詳細資訊</button>
+        <button class="my-button" data-button-name="${product.buttonText}">詳細資訊</button>
     </div>
 </div>

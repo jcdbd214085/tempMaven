@@ -71,13 +71,12 @@
                                                             fieldDescription="Leave empty to use the page title."
                                                             fieldLabel="產品資訊"
                                                             name="./productInfo"/>
-
                                                     <buttonText
                                                             jcr:primaryType="nt:unstructured"
                                                             sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
                                                             fieldLabel="按鈕名稱"
-                                                            name="./buttonText"
-                                                            maxLength="{Long}4"/>
+                                                            maxLength="{Long}4"
+                                                            name="./buttonText"/>
                                                 </items>
                                             </column>
                                         </items>
@@ -109,8 +108,8 @@
                                                     <type
                                                             jcr:primaryType="nt:unstructured"
                                                             sling:resourceType="granite/ui/components/coral/foundation/form/select"
-                                                            fieldLabel="Type"
                                                             class="color-select"
+                                                            fieldLabel="Type"
                                                             name="./type">
                                                         <items jcr:primaryType="nt:unstructured">
                                                             <fullWindow
@@ -126,7 +125,6 @@
                                                                     text="Blue"
                                                                     value="Color_Blue"/>
                                                         </items>
-
                                                     </type>
                                                 </items>
                                             </column>
