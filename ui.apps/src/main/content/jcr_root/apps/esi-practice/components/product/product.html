@@ -6,14 +6,10 @@
 
     <img
             data-sly-test="${product.fileReference}"
-            src="${product.fileReference @ context='uri'}"
+            src="${product.fileReference}"
             alt="${product.productTitle || '產品圖片'}"/>
-    <div>
-        <p style="color: red;">圖片路徑：${product.fileReference}</p>
-    </div>
-
     <div data-sly-test="${product.productTitle}">
-        <h1>${product.productTitle}</h1>
+        <h1>產品標題：${product.productTitle}</h1>
     </div>
 
     <div data-sly-test="${product.formattedProductDate}">
@@ -21,14 +17,10 @@
     </div>
 
     <div data-sly-test="${product.productInfo}">
-        <p>${product.productInfo}</p>
+        <p>產品資訊：${product.productInfo}</p>
     </div>
 
     <div data-sly-test="${product.buttonText}">
         <button>${product.buttonText}</button>
-    </div>
-
-    <div data-sly-test="${!product.buttonText}">
-        <button class="my-button" data-button-name="${product.buttonText}">詳細資訊</button>
     </div>
 </div>
