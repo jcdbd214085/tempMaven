@@ -16,8 +16,6 @@ public class ProductModel {
     @ValueMapValue(name = "./productInfo")
     private String productInfo;
 
-    @ValueMapValue(name = "./fileReference")
-    private String fileReference;
 
     @ValueMapValue(name = "./productDate")
     private Date productDate;
@@ -38,6 +36,9 @@ public class ProductModel {
     public String getProductInfo() {
         return productInfo;
     }
+
+    @ValueMapValue(name = "./fileReference")
+    private String fileReference;
 
     public String getFileReference() {
         return fileReference;

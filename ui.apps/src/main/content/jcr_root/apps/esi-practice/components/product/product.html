@@ -4,14 +4,12 @@
 
 <div data-sly-use.product="com.adobe.aem.guides.esi.core.models.ProductModel">
 
-    <div data-sly-test="${product.fileReference}">
-        <img src="${product.fileReference}"
-             alt="${product.productTitle || '產品圖片'}"
-             style="max-width: 300px; border: 1px solid green;"/>
-    </div>
-
-    <div data-sly-test="${!product.fileReference}">
-        <p style="color: red;">沒有圖片路徑</p>
+    <img
+            data-sly-test="${product.fileReference}"
+            src="${product.fileReference @ context='uri'}"
+            alt="${product.productTitle || '產品圖片'}"/>
+    <div>
+        <p style="color: red;">圖片路徑：${product.fileReference}</p>
     </div>
 
     <div data-sly-test="${product.productTitle}">
