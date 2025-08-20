@@ -14,6 +14,5 @@
         });
     });
 
-    // 保留原始 console.log 用於調試
     console.log("Hello from esi.practice.site ClientLib!");
 })();
