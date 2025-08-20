@@ -106,21 +106,21 @@
                                                             jcr:primaryType="nt:unstructured"
                                                             sling:resourceType="granite/ui/components/coral/foundation/form/select"
                                                             class="color-select"
-                                                            fieldLabel="標題顏色"
+                                                            fieldLabel="文字顏色"
                                                             name="./titleColor"
                                                             required="{Boolean}true">
                                                         <items jcr:primaryType="nt:unstructured">
                                                             <Red
                                                                     jcr:primaryType="nt:unstructured"
-                                                                    text="紅色"
+                                                                    text="Red"
                                                                     value="Red"/>
                                                             <Green
                                                                     jcr:primaryType="nt:unstructured"
-                                                                    text="綠色"
+                                                                    text="Green"
                                                                     value="Green"/>
                                                             <Blue
                                                                     jcr:primaryType="nt:unstructured"
-                                                                    text="藍色"
+                                                                    text="Blue"
                                                                     value="Blue"/>
                                                         </items>
                                                     </titleColor>
