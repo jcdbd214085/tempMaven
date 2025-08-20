@@ -36,22 +36,20 @@
                                                 <items jcr:primaryType="nt:unstructured">
                                                     <productImage
                                                             jcr:primaryType="nt:unstructured"
-                                                            sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
-                                                            allowUpload="{Boolean}false"
-                                                            autoStart="{Boolean}false"
-                                                            class="cq-droptarget"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
                                                             fieldLabel="產品圖片"
-                                                            mimeTypes="[image/png,image/jpg,image/jpeg,image/gif]"
-                                                            multiple="{Boolean}false"
+                                                            fieldDescription="請選擇 JPG 或 PNG 圖片"
                                                             name="./fileReference"
-                                                            title="Upload Image Asset"
-                                                            useHTML5="{Boolean}true"/>
+                                                            rootPath="/content/dam"
+                                                            predicate="nosystem&amp;mimetype=image/jpeg&amp;mimetype=image/png"
+                                                            required="{Boolean}true"/>
                                                     <productName
                                                             jcr:primaryType="nt:unstructured"
                                                             sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
                                                             fieldDescription="Leave empty to use the page title."
                                                             fieldLabel="產品名稱"
                                                             maxLength="6"
+                                                            required="{Boolean}true"/>
                                                             name="./productTitle"/>
                                                     <productDate
                                                             jcr:primaryType="nt:unstructured"
@@ -114,15 +112,15 @@
                                                         <items jcr:primaryType="nt:unstructured">
                                                             <Red
                                                                     jcr:primaryType="nt:unstructured"
-                                                                    text="Red"
+                                                                    text="紅色"
                                                                     value="Red"/>
                                                             <Green
                                                                     jcr:primaryType="nt:unstructured"
-                                                                    text="Green"
+                                                                    text="綠色"
                                                                     value="Green"/>
                                                             <Blue
                                                                     jcr:primaryType="nt:unstructured"
-                                                                    text="Blue"
+                                                                    text="藍色"
                                                                     value="Blue"/>
                                                         </items>
                                                     </titleColor>

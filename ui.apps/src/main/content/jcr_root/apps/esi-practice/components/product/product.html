@@ -1,18 +1,16 @@
-<div data-sly-use.product="com.adobe.aem.guides.esi.core.models.ProductModel"
-     data-component-id="${resource.path @ context='html'}">
-
-    <img src="${product.fileReference}" alt="產品圖片"/>
-
-    <h1 class="product-title ${product.titleColor @ context='styleString'}">
-        產品名稱：${product.productTitle @ context='html'}</h1>
-
-    <p>產品上架日期：${product.formattedProductDate @ context='html'}</p>
-
-    <p>產品資訊：${product.productInfo @ context='html'}</p>
-
-    <button class="my-button"
-            data-name="${product.buttonText @ context='html'}">${product.buttonText @ context='html'}</button>
-</div>
 <sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html">
     <sly data-sly-call="${clientlib.all @ categories='esi.practice.site'}"></sly>
 </sly>
+
+<div data-sly-use.product="com.adobe.aem.guides.esi.core.models.ProductModel" data-component-id="${resource.path @ context='html'}">
+    <img src="${product.fileReference @ context='uri'}" alt="產品圖片"/>
+
+    <h1 class="product-title ${product.titleColor @ context='styleString'}">產品名稱：${product.productTitle @ context='html'}</h1>
+
+    <p>上架日期：${product.formattedProductDate @ context='html'}</p>
+
+    <p>產品資訊：${product.productInfo @ context='html'}</p>
+
+    <button class="my-button" data-name="${product.buttonText @ context='html'}">${product.buttonText @ context='html'}</button>
+</div>
+
