@@ -1,13 +1,15 @@
-<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
-     data-sly-call="${clientlib.js @ categories='demo-library'}"></sly>
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html">
+    <sly data-sly-call="${clientlib.js @ categories='demo-library'}"></sly>
+</sly>
+
 
 
 <div data-sly-use.product="com.adobe.aem.guides.esi.core.models.ProductModel">
 
     <img
-            data-sly-test="${product.fileReference}"
             src="${product.fileReference}"
             alt="${product.productTitle || '產品圖片'}"/>
+
     <div data-sly-test="${product.productTitle}">
         <h1>產品標題：${product.productTitle}</h1>
     </div>
