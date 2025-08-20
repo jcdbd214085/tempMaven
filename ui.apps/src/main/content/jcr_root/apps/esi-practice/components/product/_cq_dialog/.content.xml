@@ -3,7 +3,8 @@
           xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
           jcr:primaryType="nt:unstructured"
           jcr:title="Product"
-          sling:resourceType="cq/gui/components/authoring/dialog">
+          sling:resourceType="cq/gui/components/authoring/dialog"
+          extraClientlibs="[esi.practice.site]">
     <content
             jcr:primaryType="nt:unstructured"
             sling:resourceType="granite/ui/components/coral/foundation/container">
@@ -61,6 +62,7 @@
                                                             name="./productDate"
                                                             type="datetime"
                                                             typeHint="Date"
+                                                            required="{Boolean}true"
                                                             validation="date-is-today-or-future"/>
                                                     <productInfo
                                                             jcr:primaryType="nt:unstructured"
@@ -102,27 +104,28 @@
                                                     jcr:primaryType="nt:unstructured"
                                                     sling:resourceType="granite/ui/components/coral/foundation/container">
                                                 <items jcr:primaryType="nt:unstructured">
-                                                    <type
+                                                    <titleColor
                                                             jcr:primaryType="nt:unstructured"
                                                             sling:resourceType="granite/ui/components/coral/foundation/form/select"
                                                             class="color-select"
-                                                            fieldLabel="Type"
-                                                            name="./type">
+                                                            fieldLabel="標題顏色"
+                                                            name="./titleColor"
+                                                            required="{Boolean}true">
                                                         <items jcr:primaryType="nt:unstructured">
-                                                            <fullWindow
+                                                            <Red
                                                                     jcr:primaryType="nt:unstructured"
                                                                     text="Red"
-                                                                    value="Color_Red"/>
-                                                            <sizedContainer
+                                                                    value="Red"/>
+                                                            <Green
                                                                     jcr:primaryType="nt:unstructured"
                                                                     text="Green"
-                                                                    value="Color_Green"/>
-                                                            <inline
+                                                                    value="Green"/>
+                                                            <Blue
                                                                     jcr:primaryType="nt:unstructured"
                                                                     text="Blue"
-                                                                    value="Color_Blue"/>
+                                                                    value="Blue"/>
                                                         </items>
-                                                    </type>
+                                                    </titleColor>
                                                 </items>
                                             </column>
                                         </items>
