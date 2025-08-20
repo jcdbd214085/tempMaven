@@ -21,6 +21,7 @@
     </div>
 
     <div data-sly-test="${product.buttonText}">
-        <button>${product.buttonText}</button>
+<!--/*        <button>${product.buttonText}</button>*/-->
+        <button class="my-button" data-name="${properties.buttonText @ context='html'}">${properties.buttonText || '未命名按鈕' @ context='html'}</button>
     </div>
 </div>
