@@ -14,15 +14,22 @@
     <button class="my-button" data-name="${product.buttonText @ context='html'}">${product.buttonText @ context='html'}</button>
 </div>
 
-
 <div>
     --------------------------------------------------------
     <script>
-        fetch('/bin/esi-practice/product.json')
-            .then(response => response.json())
+        // 使用當前資源路徑 + .data.json 來調用 Servlet
+        fetch('${resource.path}.data.json')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
             .then(data => {
-            console.log('hello')
-                console.log(data);
+                console.log('Product Data:', data);
+            })
+            .catch(error => {
+                console.error('Error fetching product data:', error);
             });
     </script>
 </div>
