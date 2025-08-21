@@ -1,5 +1,5 @@
 
-        package com.adobe.aem.guides.esi.core.servlets;
+package com.adobe.aem.guides.esi.core.servlets;
 
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.SlingHttpServletResponse;
@@ -9,12 +9,13 @@ import org.osgi.service.component.annotations.Component;
 import javax.servlet.Servlet;
 import java.io.IOException;
 
-@Component(service = { Servlet.class },
+@Component(service = {Servlet.class},
         property = {
                 "sling.servlet.paths=/bin/esi-practice/simple",
                 "sling.servlet.methods=GET",
                 "sling.servlet.extensions=json"
         })
+//http://localhost:4502/bin/esi-practice/simple
 public class HelloWorldServlet extends SlingSafeMethodsServlet {
 
     @Override

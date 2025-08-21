@@ -17,19 +17,12 @@
 
 <div>
     --------------------------------------------------------
-</div>
-<div data-sly-use.product="com.adobe.aem.guides.esi.core.models.ProductModel">
-    <h1>${product.productTitle}</h1>
-    <img src="${product.fileReference @ context='uri'}" alt="產品圖片"/>
-    <button>${product.buttonText}</button>
-    <p data-sly-test="${product.productInfo}">資訊：${product.productInfo @ context='html'}</p>
-    <div id="servlet-message"></div>
     <script>
         fetch('/bin/esi-practice/product.json')
             .then(response => response.json())
             .then(data => {
-                document.getElementById('servlet-message').innerText = data.message;
-                console.log('Servlet message:', data.message);
+            console.log('hello')
+                console.log(data);
             });
     </script>
 </div>
