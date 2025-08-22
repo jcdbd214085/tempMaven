@@ -1,6 +1,9 @@
 package com.adobe.aem.guides.esi.core.servlets;
+// 設置packageName
+import com.adobe.aem.guides.esi.core.models.ProductModel;  // 引入你的 ProductModel
+//import Model
 
-import com.adobe.aem.guides.esi.core.models.ProductModel;
+
 import com.google.gson.Gson;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.SlingHttpServletResponse;
@@ -15,36 +18,36 @@ import java.io.IOException;
 
 @Component(service = { Servlet.class },
         property = {
-                "sling.servlet.resourceTypes=esi/practice/components/product",
-                "sling.servlet.methods=GET",
-                "sling.servlet.extensions=json",
-                "sling.servlet.selectors=data"
+                "sling.servlet.resourceTypes=esi/practice/components/product",  // 指定的component resourceType
+                "sling.servlet.methods=GET",  // 處理怎樣的方法?
+                "sling.servlet.extensions=json",  // 處理URL 後綴為怎樣的請求？
+                "sling.servlet.selectors=data"  //選擇器用於區分數據請求，例如/content/your-site/product.data.json
         })
 public class ProductSourceServlet extends SlingSafeMethodsServlet {
 
-    private static final Logger LOG = LoggerFactory.getLogger(ProductSourceServlet.class);
+    private static final Logger LOG = LoggerFactory.getLogger(ProductServlet.class);
 
     @Override
     protected void doGet(SlingHttpServletRequest request, SlingHttpServletResponse response) throws IOException {
-        LOG.info("Processing GET request for Product resourceType");
+        LOG.info("處理 Product resourceType 的 GET 請求");
 
-        // 獲取當前資源
+        // 獲取當前資源（你的 Product component 的 JCR 節點）
         Resource resource = request.getResource();
         if (resource == null) {
-            LOG.error("Resource is null");
-            response.sendError(SlingHttpServletResponse.SC_NOT_FOUND, "Resource not found");
+            LOG.error("資源為空");
+            response.sendError(SlingHttpServletResponse.SC_NOT_FOUND, "找不到資源");
             return;
         }
 
-        // 適配資源到 ProductModel
+        // 將資源適配到你的 ProductModel
         ProductModel product = resource.adaptTo(ProductModel.class);
         if (product == null) {
-            LOG.error("Failed to adapt resource to ProductModel");
-            response.sendError(SlingHttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Failed to adapt resource");
+            LOG.error("無法適配資源到 ProductModel");
+            response.sendError(SlingHttpServletResponse.SC_INTERNAL_SERVER_ERROR, "適配資源失敗");
             return;
         }
 
-        // 創建 JSON 數據
+        // 創建 JSON 數據，使用你的 ProductModel 的 getter 方法
         Gson gson = new Gson();
         String json = gson.toJson(new ProductData(
                 product.getProductTitle(),
@@ -55,13 +58,13 @@ public class ProductSourceServlet extends SlingSafeMethodsServlet {
                 product.getFileReference()
         ));
 
-        // 設置響應
+        // 設置回應為 JSON
         response.setContentType("application/json");
         response.setCharacterEncoding("UTF-8");
         response.getWriter().write(json);
     }
 
-    // 內部類用於結構化 JSON 數據
+    // 內部類，用來結構化 JSON 數據（基於你的 ProductModel 屬性）
     private static class ProductData {
         private final String productTitle;
         private final String productInfo;
@@ -70,7 +73,8 @@ public class ProductSourceServlet extends SlingSafeMethodsServlet {
         private final String titleColor;
         private final String fileReference;
 
-        public ProductData(String productTitle, String productInfo, String productDate, String buttonText, String titleColor, String fileReference) {
+        public ProductData(String productTitle, String productInfo, String productDate,
+                           String buttonText, String titleColor, String fileReference) {
             this.productTitle = productTitle;
             this.productInfo = productInfo;
             this.productDate = productDate;

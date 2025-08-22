@@ -14,5 +14,22 @@
         });
     });
 //
+
+        // 從 data-api-path 屬性讀取資源路徑
+        const apiPath = document.querySelector('[data-api-path]').dataset.apiPath;
+        fetch(apiPath + '.data.json')  // 調用 API: /content/.../product.data.json
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log('Product Data:', data);  // 在控制台輸出 JSON
+                // 可選：動態更新頁面，例如 document.querySelector('.product-title').textContent = data.productTitle;
+            })
+            .catch(error => {
+                console.error('Error fetching product data:', error);
+            });
     console.log("Hello from esi.practice.site ClientLib!");
 })();
