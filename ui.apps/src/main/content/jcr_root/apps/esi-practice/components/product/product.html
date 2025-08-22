@@ -19,5 +19,15 @@
 <div>
     --------------------------------------------------------
     <script>
+        const apiPath = document.querySelector('[data-api-path]').dataset.apiPath;
+    fetch(apiPath + '.json') // 調用 /content/.../product.json
+        .then(response => {
+            if (!response.ok) throw new Error('Network response was not ok');
+            return response.json();
+        })
+        .then(data => console.log('Product Data:', data))
+        .catch(error => console.error('Error:', error));
+
+        fetch('https://randomuser.me/api/').then(response => response.json()).then(data => console.log(data));
     </script>
 </div>
